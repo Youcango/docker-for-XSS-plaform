@@ -347,14 +347,14 @@ return $file_contents;
 }
 
 /*长地址转化成短地址*/
-function LongUrltoShortUrl($longurl=''){
+function LongUrltoShortUrl2($longurl=''){
 	//新浪API接口
 	$Url="http://api.t.sina.com.cn/short_url/shorten.json?source=3213676317&url_long=".$longurl;
 	$Url=vita_get_url_content($Url);
 	$shortUrl=json_decode($Url,true);
 	return $shortUrl[0]['url_short'];
 }
-function LongUrltoShortUrl2($longurl){ 
+function LongUrltoShortUrl($longurl){ 
 
 $url="http://is.gd/create.php?format=simple&url=".$longurl; 
 ini_set('user_agent', 'Baiduspider'); 
